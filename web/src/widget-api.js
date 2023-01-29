@@ -60,7 +60,7 @@ export function sendSticker(content) {
 	const widgetData = {
 		...data,
 		description: content.body,
-		file: `${content.id}.png`,
+		file: `${content.id}.webp`,
 	}
 	// Element iOS explodes if there are extra fields present
 	delete widgetData.content["net.maunium.telegram.sticker"]
