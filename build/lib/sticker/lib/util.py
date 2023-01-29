@@ -27,7 +27,7 @@ open_utf8 = partial(open, encoding='UTF-8')
 def convert_image(data: bytes) -> (bytes, int, int):
     image: Image.Image = Image.open(BytesIO(data)).convert("RGBA")
     new_file = BytesIO()
-    image.save(new_file, "png")
+    image.save(new_file, "webp")
     w, h = image.size
     if w > 256 or h > 256:
         # Set the width and height to lower values so clients wouldn't show them as huge images
@@ -65,7 +65,7 @@ def make_sticker(mxc: str, width: int, height: int, size: int,
             "w": width,
             "h": height,
             "size": size,
-            "mimetype": "image/png",
+            "mimetype": "image/webp",
 
             # Element iOS compatibility hack
             "thumbnail_url": mxc,
@@ -73,7 +73,7 @@ def make_sticker(mxc: str, width: int, height: int, size: int,
                 "w": width,
                 "h": height,
                 "size": size,
-                "mimetype": "image/png",
+                "mimetype": "image/webp",
             },
         },
         "msgtype": "m.sticker",
