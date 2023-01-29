@@ -35,7 +35,7 @@ async def reupload_document(client: TelegramClient, document: Document) -> matri
     print(".", end="", flush=True)
     data, width, height = util.convert_image(data)
     print(".", end="", flush=True)
-    mxc = await matrix.upload(data, "image/png", f"{document.id}.png")
+    mxc = await matrix.upload(data, "image/webp", f"{document.id}.webp")
     print(".", flush=True)
     return util.make_sticker(mxc, width, height, len(data))
 
