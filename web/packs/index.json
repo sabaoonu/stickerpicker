@@ -1,6 +1,8 @@
 {
   "packs": [
-    "emotes.json"
+    "emotes.json",
+     "scalar-rabbit.json",
+    "scalar-loading_artist.json"
   ],
   "homeserver_url": "https://matrix-client.matrix.org"
 }
